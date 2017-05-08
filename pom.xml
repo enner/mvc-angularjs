@@ -4,11 +4,17 @@
     <groupId>com.xvitcoder.springmvcangularjs</groupId>
     <artifactId>spring-mvc-angularjs</artifactId>
     <packaging>war</packaging>
-    <version>1.1</version>
+    <version>1.1.1-SNAPSHOT</version>
     <name>AngularSpringApp Maven Webapp</name>
     <url>http://maven.apache.org</url>
-    <dependencies>
+    
+    <scm>
+		<url>https://github.com/enner/mvc-angularjs</url>
+		<connection>scm:git:git://github.com/enner/mvc-angularjs.git</connection>
+		<developerConnection>scm:git:git@github.com:enner/mvc-angularjs.git</developerConnection>
+    </scm>
 
+    <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
