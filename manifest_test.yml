@@ -1,7 +1,7 @@
 ---
 applications:
 - name: mvc
-  memory: 256M
+  memory: 128M
   host: mvc-test
   buildpack: java_buildpack
   path: ./target/spring-mvc-angularjs.war
