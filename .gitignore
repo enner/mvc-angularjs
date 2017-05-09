@@ -1,4 +1,7 @@
 target
+.classpath
+.project
+.settings
 src/main/resources/rebel.xml
 .idea
 spring-mvc-angularjs.iml
