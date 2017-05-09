@@ -4,7 +4,7 @@
     <groupId>com.xvitcoder.springmvcangularjs</groupId>
     <artifactId>spring-mvc-angularjs</artifactId>
     <packaging>war</packaging>
-    <version>${pom.version}</version>
+    <version>2.${pom.version}</version>
     <name>AngularSpringApp Maven Webapp</name>
     <url>http://maven.apache.org</url>
     
