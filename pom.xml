@@ -7,7 +7,9 @@
     <version>${pom.version}</version>
     <name>AngularSpringApp Maven Webapp</name>
     <url>http://maven.apache.org</url>
-    
+    <properties>
+       <pom.version>2-SNAPSHOT</pom.version>
+    </properties>
     <scm>
 		<url>https://github.com/enner/mvc-angularjs</url>
 		<connection>scm:git:git://github.com/enner/mvc-angularjs.git</connection>
