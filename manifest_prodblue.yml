@@ -1,5 +1,5 @@
-----
-application:
+---
+applications:
 - name: mvc
   disk_quota: 512M
   memory: 256M
