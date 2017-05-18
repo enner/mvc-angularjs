@@ -3,6 +3,6 @@ applications:
 - name: mvc
   disk_quota: 512M
   memory: 256M
-  host: mvc
+  host: mvcblue
   buildpack: java_buildpack
   path: ./target/spring-mvc-angularjs.war
