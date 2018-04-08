@@ -28,7 +28,12 @@ pipeline {
                 sh "mvn install"
             }
         }
-
+    }
+    
+    post {
+        always {
+            junit '**/*Test.xml'
+        }
     }
     
 }
