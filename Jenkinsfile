@@ -1,10 +1,10 @@
 pipeline {
-    agent { docker 'maven:3-alpine' } 
+    agent { docker 'maven:3-alpine' }
     
 	parameters {
         choice(choices: '1-INT\n2-TEST\n3-PROD', description: 'CloudFoundry Deployment Space', name: 'cfspace')
     }
-     
+    
     stages {
         stage('Build') {
             steps {
