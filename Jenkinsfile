@@ -30,6 +30,13 @@ pipeline {
         }
     }
     
+    pushToCloudFoundry(
+    target: 'api.local.pcfdev.io',
+    organization: 'pcfdev-org',
+    cloudSpace: 'pcfdev-space',
+    credentialsId: 'pcfdev_user'
+	)
+    
     post {
         always {
             junit '**/*Test.xml'
