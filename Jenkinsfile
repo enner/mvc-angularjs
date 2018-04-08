@@ -28,7 +28,7 @@ pipeline {
         stage('Release') {
             agent { docker 'maven:3-alpine' } 
             steps {
-                sh '''mvn install'''
+                sh "mvn install"
             }
         }
         
@@ -43,7 +43,7 @@ pipeline {
     
     post {
         always {
-            junit 'build/reports/**/*.xml'
+            junit 'target/surefire-reports/**/*.xml'
         }
     }
 }
