@@ -13,11 +13,26 @@ pipeline {
                 sh '''
                 java -version
                 mvn -version;
-                mvn clean compile package install
+                mvn clean compile
                 '''
             }
         }
-        stage('Test') {
+        
+        stage('UnitTest') {
+            agent { docker 'maven:3-alpine' } 
+            steps {
+                sh "mvn test"
+            }
+        }
+        
+        stage('Release') {
+            agent { docker 'maven:3-alpine' } 
+            steps {
+                sh '''mvn install'''
+            }
+        }
+        
+        stage('Java') {
             agent { docker 'openjdk:8-jre' } 
             steps {
                 echo 'Hello, JDK'
