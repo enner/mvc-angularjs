@@ -10,9 +10,9 @@ pipeline {
             steps {
             	    sh "echo ${params.cfspace}"
                 sh '''
-                java -version
+                java -version;
                 mvn -version;
-                mvn clean compile
+                mvn clean compile;
                 '''
             }
         }
