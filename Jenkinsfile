@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             agent { docker 'maven:3-alpine' } 
             steps {
+            		sh "echo ${params.cfspace}"
                 echo 'Hello, Maven'
                 sh '''
                 mvn -version
