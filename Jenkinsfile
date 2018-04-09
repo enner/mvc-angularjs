@@ -30,7 +30,6 @@ pipeline {
         }
         
         stage('Deploy') {
-        		agent { docker 'maven:3-alpine' }
             steps {
                 sh "mvn install"
             }
