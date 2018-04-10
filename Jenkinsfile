@@ -30,6 +30,7 @@ pipeline {
         }
         
         stage('Deploy') {
+        		agent { docker 'governmentpaas/cf-cli:latest' }
             steps {
                 sh "mvn install"
             }
