@@ -1,8 +1,13 @@
 pipeline {
-    agent { docker 'maven:latest' }
-	parameters {
-        choice(choices: '1-INT\n2-TEST\n3-PROD', description: 'CloudFoundry Deployment Space', name: 'cfspace')
-    }
+    agent 
+	{ 
+		docker 'maven:3-jdk-8'
+		arg '-v maven-data:/root/.m2'
+	}
+	parameters 
+	{
+        	choice(choices: '1-INT\n2-TEST\n3-PROD', description: 'CloudFoundry Deployment Space', name: 'cfspace')
+    	}
     
     stages {
     		
