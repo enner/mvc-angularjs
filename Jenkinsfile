@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     parameters 
 	{
 		choice(choices: '1-INT\n2-TEST\n3-PROD', description: 'CloudFoundry Deployment Space', name: 'cfspace')
