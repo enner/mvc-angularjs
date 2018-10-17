@@ -30,8 +30,7 @@ pipeline {
         }
         
         stage('Run') {
-            steps {
-                sh "mvn tomcat7:run-war"
+            steps {                
             }
         }
     }
