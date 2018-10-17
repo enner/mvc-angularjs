@@ -17,7 +17,7 @@ pipeline {
                 sh '''
                 java -version;
                 mvn -version;
-                mvn clean compile test instsall;
+                mvn clean compile test install;
                 '''
             }
         }
