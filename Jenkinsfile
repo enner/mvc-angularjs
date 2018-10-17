@@ -29,10 +29,9 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
-        		agent { docker 'governmentpaas/cf-cli:latest' }
+        stage('Run') {
             steps {
-                sh "mvn install"
+                sh "mvn tomcat7:run-war"
             }
         }
     }
