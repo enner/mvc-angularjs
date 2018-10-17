@@ -36,10 +36,6 @@ pipeline {
             }
         }
         
-        stage('Run') {
-            steps {                
-            }
-        }
     }
     
     post {
