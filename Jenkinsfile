@@ -41,8 +41,7 @@ pipeline {
         	CF_CLI = credentials('CFCLITEST')
     	    }
             steps {
-                sh "echo $CF_CLI"
-	        sh "cf login -u $CF_CLI_USR -p $CF_CLI_PSW"
+	        sh "echo 'cf login -a someAPI -u $CF_CLI_USR -p $CF_CLI_PSW -o myORG -s ${params.cfspace}'"
             }
         }        
     }
