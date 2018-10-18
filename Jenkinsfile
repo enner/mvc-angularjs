@@ -29,7 +29,6 @@ pipeline {
         stage('UnitTest') {
             steps {
 		sh '''
-		echo $CFCLI;
 		java -version;
 		mvn -version;
 		mvn clean compile test install;
