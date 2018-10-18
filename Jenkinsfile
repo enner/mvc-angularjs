@@ -41,7 +41,8 @@ pipeline {
         	CF_CLI = credentials('ORGCFCLI')
     	    }
             steps {
-	        sh "echo 'cf login -a someAPI -u $CF_CLI_USR -p $CF_CLI_PSW -o ORG -s ${params.cfspace}'"
+		sh "echo $PWD; ls -ltr $PWD"
+	        sh "echo 'cf login -a someAPI -u $CF_CLI_USR -p $CF_CLI_PSW -o ORG -s ${params.cfspace}; cf push manifest_${params.cfspace}.xml'"
             }
         }
 	    
