@@ -42,6 +42,7 @@ pipeline {
     	    }
             steps {
                 sh "echo $CF_CLI"
+	        sh "cf login -u $CF_CLI_USR -p $CF_CLI_PSW"
             }
         }        
     }
