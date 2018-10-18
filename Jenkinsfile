@@ -8,6 +8,9 @@ pipeline {
 	{
 		choice(choices: '1-INT\n2-TEST\n3-PROD', description: 'CloudFoundry Deployment Space', name: 'cfspace')
 	}
+    environment {
+        CF_CLI = credentials('CFCLITEST')
+    }
     
     stages {
     		
@@ -19,6 +22,7 @@ pipeline {
             steps {
             	sh "echo ${params.cfspace}"
                 sh '''
+		echo ${params.cfspace};
                 java -version;
                 mvn -version;
                 mvn clean compile test install;
@@ -29,6 +33,7 @@ pipeline {
         stage('UnitTest') {
             steps {
 		sh '''
+		echo $CFCLI;
 		java -version;
 		mvn -version;
 		mvn clean compile test install;
