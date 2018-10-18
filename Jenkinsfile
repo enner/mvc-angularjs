@@ -23,18 +23,14 @@ pipeline {
         }
         
         stage('UnitTest') {
-		agent { docker { 
-			image 'maven:3-jdk-8' 
-			args '-v maven-data:/root/.m2'
-		} }
             steps {
-                sh "mvn -version"
+                sh "mvn test"
             }
         }
         
-        stage('Release') {
+        stage('CF push') {
             steps {
-                sh "mvn -version"
+                sh "cf version"
             }
         }        
     }
