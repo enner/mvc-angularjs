@@ -27,9 +27,6 @@ pipeline {
         }
         
         stage('UnitTest') {
-	    environment {
-        	CF_CLI = credentials('CFCLITEST')
-    	    }
             steps {
 		sh '''
 		echo $CFCLI;
@@ -41,8 +38,11 @@ pipeline {
         }
         
         stage('CF push') {
+	    environment {
+        	CF_CLI = credentials('CFCLITEST')
+    	    }
             steps {
-                sh "cf version"
+                sh "echo $CF_CLI"
             }
         }        
     }
