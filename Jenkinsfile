@@ -29,9 +29,9 @@ pipeline {
         stage('UnitTest') {
             steps {
 		sh '''
-                    echo "PATH = ${PATH}";
-                    echo "M2_HOME = ${M2_HOME}";
-		    mvn -version; mvn test;
+		java -version;
+		mvn -version;
+		mvn clean compile test install;
                 ''' 
             }
         }
