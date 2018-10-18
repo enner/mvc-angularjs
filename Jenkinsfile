@@ -43,7 +43,28 @@ pipeline {
             steps {
 	        sh "echo 'cf login -a someAPI -u $CF_CLI_USR -p $CF_CLI_PSW -o myORG -s ${params.cfspace}'"
             }
-        }        
+        }
+	    
+      stage('Smoke-Test') {
+      parallel {
+        stage('Smoke-A') {
+          steps {
+            sh 'curl -k http://localhost:80 | grep body'
+          }
+        }
+        stage('Smoke-B') {
+          steps {
+            sh 'curl -k http://localhost:80 | grep body'
+          }
+        }
+        stage('Smoke-C') {
+          steps {
+            sh 'curl -k http://localhost:80 | grep body'
+          }
+        }
+      }
+	    
+	    
     }
     
     post {
