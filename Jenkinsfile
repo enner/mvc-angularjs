@@ -62,8 +62,8 @@ pipeline {
             sh 'curl -k http://localhost:80 | grep body'
           }
         }
-      }
-	    
+       }
+      }  
 	    
     }
     
