@@ -38,10 +38,10 @@ pipeline {
         
         stage('CF push') {
 	    environment {
-        	CF_CLI = credentials('CFCLITEST')
+        	CF_CLI = credentials('ORGCFCLI')
     	    }
             steps {
-	        sh "echo 'cf login -a someAPI -u $CF_CLI_USR -p $CF_CLI_PSW -o myORG -s ${params.cfspace}'"
+	        sh "echo 'cf login -a someAPI -u $CF_CLI_USR -p $CF_CLI_PSW -o ORG -s ${params.cfspace}'"
             }
         }
 	    
